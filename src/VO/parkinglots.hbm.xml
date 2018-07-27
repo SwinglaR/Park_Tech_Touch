@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.ParkinglotsVO" table="Parkinglots">
+
+		<id name="parkinglots_id" type="int" column="Parkinglots_Id">
+			<generator class="increment" />
+		</id>
+		
+		<property name="val_plotname2">
+			<column name="Parkinglots_Name" />
+		</property>
+	
+		<property name="val_latitude">
+			<column name="Latitude" />
+		</property>
+
+		<property name="val_longitude">
+			<column name="Longitude" />
+		</property>
+		
+		<property name="val_contactpersonname">
+			<column name="Contactpersonname" />
+		</property>
+		
+		<property name="val_contactnumber">
+			<column name="Contactnumber" />
+		</property>
+		
+		<property name="val_address">
+			<column name="Address" />
+		</property>
+		
+		<property name="val_description">
+			<column name="Description" />
+		</property>
+		
+		<property name="val_2capacity">
+			<column name="Two_Wheeler" />
+		</property>
+	
+		<property name="val_4capacity">
+			<column name="Four_Wheeler" />
+		</property>
+
+		<property name="val_4price">
+			<column name="Four_Wheeler_Price" />
+		</property>
+		
+		<property name="val_2price">
+			<column name="Two_Wheeler_Price" />
+		</property>
+		
+	<many-to-one class="VO.StateVO" name="v" column="State_Id"></many-to-one>
+	<many-to-one class="VO.CityVO" name="v1" column="City_Id"></many-to-one>
+	<many-to-one class="VO.AreaVO" name="v2" column="Area_Id"></many-to-one>
+	<many-to-one class="VO.ParkingProviderVO" name="parkingProviderVO" column="ParkingProvider_Id"></many-to-one>
+	
+	
+	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.BookParkingSlotsVO" table="BookingParkingSlots">
+
+		<id name="bookParkingSlots_id" type="int" column="BookParkingSlots_Id">
+			<generator class="increment" />
+		</id>
+
+		<property name="booking_type">
+			<column name="BookingStatus" />
+		</property>
+		<property name="fourWheeler">
+			<column name="fourWheeler" />
+		</property>
+		<property name="twoWheeler">
+			<column name="twoWheeler" />
+		</property>
+		
+		<many-to-one class="VO.LoginVO" name="loginVO">
+			<column name="Login_Id"/>
+		</many-to-one>
+		<many-to-one class="VO.ParkinglotsVO" name="parkinglotsVO">
+			<column name="Parkinglots_Id"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>
+

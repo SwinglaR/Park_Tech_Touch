@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.BookingContinuousPeriodVO" table="BookingContinuousPeriod">
+
+		<id name="bookingContinuousPeriod_id" type="int" column="BookingContinuousPeriod_Id">
+			<generator class="increment" />
+		</id>
+
+		<property name="start_date">
+			<column name="StartingDate" />
+		</property>
+		<property name="end_date">
+			<column name="EndingDate" />
+		</property>
+		<property name="start_time">
+			<column name="StartTime" />
+		</property>
+		<property name="end_time">
+			<column name="EndTime" />
+		</property>
+		
+		<many-to-one class="VO.BookParkingSlotsVO" name="bookParkingSlotsVO">
+			<column name="BookParkingSlots_Id"/>
+		</many-to-one>
+		
+	</class>
+</hibernate-mapping>

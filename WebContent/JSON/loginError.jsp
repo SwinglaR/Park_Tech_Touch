@@ -1,0 +1,4 @@
+[{"flag":"${sessionScope.flag }"}]
+
+
+

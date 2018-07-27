@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.ParkinglotsAttachmentVO" table="ParkingLotsAttachment">
+
+		<id name="parkinglotsattachment_id" type="int" column="ParkinglotsAttachment_Id">
+			<generator class="increment" />
+		</id>
+		
+		<property name="filename">
+			<column name="filename" />
+		</property>
+		
+		<property name="encryptedfilename">
+			<column name="encryptedfilename" />
+		</property>
+	
+	<many-to-one class="VO.ParkinglotsVO" name="parkinglotsVO" column="Parkinglots_Id"></many-to-one>
+	</class>
+</hibernate-mapping>

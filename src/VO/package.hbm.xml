@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.PackageVO" table="Package">
+
+		<id name="package_id" type="int" column="Package_Id">
+			<generator class="increment" />
+		</id>
+		
+		<property name="val_package_name">
+			<column name="PackageName" />
+		</property>
+		<property name="val_package_description">
+			<column name="PackageDescription" />
+		</property>
+		<property name="val_package_price">
+			<column name="PackagePrice" />
+		</property>
+		<property name="val_package_duration">
+			<column name="PackageDuration" />
+		</property>
+		<property name="val_package_hour">
+			<column name="NoOfHours" />
+		</property>
+		<property name="val_package_charge">
+			<column name="ChargesPerHour" />
+		</property>
+		<many-to-one class="VO.ParkinglotsVO" name="parkinglotsVO" column="Parkinglots_Id"></many-to-one>
+	</class>
+</hibernate-mapping>

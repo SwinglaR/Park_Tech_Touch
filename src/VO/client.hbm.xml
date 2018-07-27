@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.ClientVO" table="Client">
+
+		<id name="client_id" type="int" column="Client_Id">
+			<generator class="increment" />
+		</id>
+		
+		<property name="client_first_name">
+			<column name="Client_First_Name" />
+		</property>
+		
+		<property name="client_last_name">
+			<column name="Client_last_Name" />
+		</property>
+		
+			
+		<property name="client_mobile_number">
+			<column name="Client_Mobile_Number" />
+		</property>
+	
+		
+		
+	<many-to-one class="VO.LoginVO" name="loginVO" column="Login_Id"></many-to-one>
+
+	</class>
+</hibernate-mapping>
+

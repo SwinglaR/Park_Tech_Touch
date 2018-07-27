@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class"> com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:8889/park_tech_touch</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.pool_size">10</property>
+		<property name="show_sql">true</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- Mapping files -->
+		
+		<mapping resource="VO/state.hbm.xml" />
+		<mapping resource="VO/faq.hbm.xml" />
+		<mapping resource="VO/city.hbm.xml" />
+		<mapping resource="VO/area.hbm.xml" />
+		<mapping resource="VO/parkinglots.hbm.xml" />
+		
+		<mapping resource="VO/parkinglotsattachment.hbm.xml" />
+		<mapping resource="VO/client.hbm.xml" />
+		<mapping resource="VO/login.hbm.xml" />
+		<mapping resource="VO/parkingprovider.hbm.xml" />
+		<mapping resource="VO/package.hbm.xml" />
+		<mapping resource="VO/faqcategory.hbm.xml" />
+		<mapping resource="VO/bookingcontinuousperiod.hbm.xml" />
+		<mapping resource="VO/bookingmultidate.hbm.xml" />
+		<mapping resource="VO/bookparkingslots.hbm.xml" />
+		<mapping resource="VO/inout.hbm.xml" />
+		<mapping resource="VO/feedback.hbm.xml" />
+					
+	</session-factory>
+</hibernate-configuration>

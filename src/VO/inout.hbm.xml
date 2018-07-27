@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.InoutVO" table="VehicleInOut">
+
+		<id name="inout_id" type="int" column="Inout_Id">
+			<generator class="increment" />
+		</id>
+		
+		<property name="val_vehicletype">
+			<column name="VehicleType" />
+		</property>
+		
+		<property name="val_vehiclenumber">
+			<column name="VehicleNumber"/>
+		</property>
+		
+		<property name="val_date">
+			<column name="Val_Date"/>
+		</property>
+		
+		<property name="val_time">
+			<column name="Val_Time"/>
+		</property>
+		
+		<property name="val_action">
+			<column name="Val_Action"/>
+		</property>
+		
+		
+	
+	<many-to-one class="VO.ClientVO" name="clientVO" column="Client_Id"></many-to-one>
+	<many-to-one class="VO.ParkinglotsVO" name="parkinglotsVO" column="Parkinglots_Id"></many-to-one>
+	
+	</class>
+</hibernate-mapping>
