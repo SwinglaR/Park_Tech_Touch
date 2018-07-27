@@ -212,14 +212,14 @@ String flag=request.getParameter("flag");
 					"\n \n<br>Number of 2 Wheeler :"+twoWheeler+
 					"\n \n<br>Payment :"+payment, "text/html");
            */
-            InternetAddress sender = new InternetAddress("sarvang.pathak@gmail.com","PTT");
+            InternetAddress sender = new InternetAddress("<email>","PTT");
             InternetAddress receiver = new InternetAddress(email);
             message.setFrom(sender);
             message.setRecipient(Message.RecipientType.TO, receiver);
             message.saveChanges();
             
             javax.mail.Transport transport = mailSession.getTransport("smtp");
-            transport.connect("smtp.gmail.com", 587, "sarvang.pathak@gmail.com", "longwwhite1957");
+            transport.connect("smtp.gmail.com", 587, "**********@gmail.com", "**************");
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
                     
